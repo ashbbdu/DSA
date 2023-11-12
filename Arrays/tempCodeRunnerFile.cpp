@@ -1,4 +1,4 @@
-     for(int j = 0 ; j < crr.size() ; j= j+1) {
-         
-            cout << crr[j] << " ";
-     }
+   vector <int> arr {1,2,3,4};
+    for(int i =0 ; i < arr.size() ; i++) {
+        cout << arr[i] << " ";
+    }
