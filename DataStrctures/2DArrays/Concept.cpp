@@ -2,9 +2,9 @@
 
 using namespace std;
 
+void printRowSum(int arr[][3], int row, int col)
+{
 
-void printRowSum (int arr[][3] , int row, int col) {
-    
     for (int i = 0; i < row; i++)
 
     {
@@ -12,24 +12,36 @@ void printRowSum (int arr[][3] , int row, int col) {
         // cout << sum << " initial value of sum";
         for (int j = 0; j < col; j++)
         {
-          sum = sum + arr[i][j];
+            sum = sum + arr[i][j];
         }
         cout << sum << " ";
     }
 }
 
-void printColSum (int arr[][3] , int row , int col) {
-        for (int i = 0; i < row; i++)
+void printColSum(int arr[][3], int row, int col)
+{
+    for (int i = 0; i < row; i++)
 
     {
         int sum = 0;
         // cout << sum << " initial value of sum";
         for (int j = 0; j < col; j++)
         {
-          sum = sum + arr[j][i];
+            sum = sum + arr[j][i];
         }
-        cout << sum << " " ;
-    }    
+        cout << sum << " ";
+    }
+}
+
+bool searchDigit(int arr[][3], int row, int col, int key) {
+    for (int i = 0; i < row; i++) {
+     for (int j = 0; j < col; j++) {
+            if (arr[i][j] == key) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 int main()
@@ -43,7 +55,7 @@ int main()
     {
         for (int j = 0; j < 3; j++)
         {
-            cout << brr[i][j] << " " ;
+            cout << brr[i][j] << " ";
         }
         cout << endl;
     }
@@ -71,29 +83,34 @@ int main()
     //     cout << endl;
     // }
 
+    // In the above code we have printed the array row wise
 
-// In the above code we have printed the array row wise
+    // Printing array column wise
+    cout << "Printing array column wise" << endl;
+    cout << endl;
 
-// Printing array column wise
-cout << "Printing array column wise" << endl;
-     cout << endl;
-
-       for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
         {
-            cout << brr[j][i] << " " ;
+            cout << brr[j][i] << " ";
         }
         cout << endl;
     }
 
     int row = 3;
-    int col =3;
+    int col = 3;
 
-    printRowSum(brr , row , col);
+    printRowSum(brr, row, col);
     cout << endl;
     cout << "Printing colum wise sum" << endl;
-    printColSum(brr , row , col);
+    printColSum(brr, row, col);
 
+    // write a function to search a digit in a 2D Array
+    cout << endl;
+    int key = 60;
+    cout << searchDigit(brr, row, col, key) << " result";
+
+    // 
 
 }
